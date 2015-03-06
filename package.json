@@ -4,16 +4,17 @@
     "main": "index",
     "format": "es6",
     "directories": {
+      "ignore": "test",
       "lib": "src",
-      "packages": "jspm_packages",
-      "ignore": "test"
+      "packages": "jspm_packages"
     },
     "dependencies": {
-      "json": "^0.1.0"
+      "json": "github:systemjs/plugin-json@^0.1.0"
     }
   },
   "devDependencies": {
     "jasmine-core": "^2.2.0",
+    "jspm": "^0.14.0",
     "karma": "^0.12.31",
     "karma-chrome-launcher": "^0.1.7",
     "karma-firefox-launcher": "^0.1.4",

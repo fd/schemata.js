@@ -1,0 +1,12 @@
+box: wercker/nodejs
+build:
+  steps:
+    - npm-install
+    - script:
+        name: jspm install
+        code: |
+          jspm install
+    - script:
+        name: karma
+        code: |
+          karma start
