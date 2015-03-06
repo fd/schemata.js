@@ -1,10 +1,13 @@
 {
-  "main": "index",
+  "name": "schemata.js",
 
   "jspm": {
+    "main": "index",
+    "format": "es6",
     "directories": {
-      "lib": ".",
-      "packages": "jspm_packages"
+      "lib": "src",
+      "packages": "jspm_packages",
+      "ignore": "test"
     },
     "dependencies": {
       "json": "^0.1.0"

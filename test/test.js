@@ -1,4 +1,4 @@
-import {Schema, Loader} from '../index';
+import {Schema, Loader} from '../src/index';
 
 var definition = {
   "title": "Example Schema",
