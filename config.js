@@ -1,5 +1,5 @@
 System.config({
-  "baseURL": "/",
+  "baseURL": "/base",
   "paths": {
     "*": "*.js",
     "github:*": "jspm_packages/github/*.js"

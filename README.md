@@ -1,5 +1,8 @@
 # schemata.js
 
+[![Sauce Test Status](https://saucelabs.com/browser-matrix/schematajs.svg)](https://saucelabs.com/u/schematajs)
+
+
 ```js
 import {Schema} from 'shemata.js';
 

@@ -1,6 +1,7 @@
 import {typeOf, isSchema, normalizeId} from './util';
 import {build, isMetaSchema, getMetaSchema, determineMetaSchema} from './builder';
 import {Schema, $id} from './schema';
+import './vendor/fetch';
 
 export class Loader {
 
