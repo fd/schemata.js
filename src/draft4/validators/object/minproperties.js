@@ -1,4 +1,4 @@
-import {typeOf} from '../../util';
+import {typeOf} from '../../../util';
 
 const ERR = 'object.minProperties';
 

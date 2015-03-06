@@ -1,4 +1,4 @@
-import {typeOf, unicodeLength} from '../../util';
+import {typeOf, unicodeLength} from '../../../util';
 
 const ERR = 'string.minLength';
 

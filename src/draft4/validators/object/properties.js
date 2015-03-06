@@ -1,4 +1,4 @@
-import {typeOf, isSchema, isSchemaMap} from '../../util';
+import {typeOf, isSchema, isSchemaMap} from '../../../util';
 
 const ERR = 'object.properties';
 

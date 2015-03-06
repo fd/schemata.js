@@ -1,5 +1,3 @@
-import Validators from './validators';
-
 import {
   Schema,
   $id,
@@ -18,8 +16,15 @@ import {
   normalizeId
 } from './util';
 
+var metaSchemas = {};
+export function registerMetaSchema(m) {
+  metaSchemas[m.schema.id] = m;
+}
+
 export function build({ schema, id }) {
   var builder = new Builder();
+
+  builder.meta = (metaSchemas[schema.$schema] || metaSchemas['http://json-schema.org/draft-04/schema#']);
 
   builder.build(schema, (id || schema.id || '#'), true);
   return builder.bind().then(() => builder.root);
@@ -84,7 +89,7 @@ class Builder {
     }
 
     // make validators;
-    let validators = Validators
+    let validators = this.meta.validators
       .filter(v => v.include(schema))
       .map(v => new v(schema));
     if (validators.length > 0) {

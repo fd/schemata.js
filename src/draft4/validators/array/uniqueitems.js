@@ -1,4 +1,4 @@
-import {typeOf, isEqual} from '../../util';
+import {typeOf, isEqual} from '../../../util';
 
 const ERR = 'array.uniqueItems';
 

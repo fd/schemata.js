@@ -1,4 +1,4 @@
-import {typeOf, isSchema} from '../../util';
+import {typeOf, isSchema} from '../../../util';
 
 const ERR = 'any.oneOf';
 

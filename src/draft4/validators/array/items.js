@@ -1,4 +1,4 @@
-import {typeOf, isSchema, isSchemaArray} from '../../util';
+import {typeOf, isSchema, isSchemaArray} from '../../../util';
 
 const ERR = 'array.items';
 

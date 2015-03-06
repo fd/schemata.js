@@ -1,39 +1,36 @@
+import {registerMetaSchema} from './builder';
+import './context';
+import './loader';
+import './schema';
+import './util';
 
+import './vendor/ipaddr';
+import './vendor/url';
 
-import './src/builder';
-import './src/context';
-import './src/loader';
-import './src/schema';
-import './src/util';
-import './src/validators';
+import * as Draft4 from './draft4/schema';
+import './draft4/validators/any/allof';
+import './draft4/validators/any/anyof';
+import './draft4/validators/any/oneof';
+import './draft4/validators/any/not';
+import './draft4/validators/any/enum';
+import './draft4/validators/any/type';
+import './draft4/validators/array/items';
+import './draft4/validators/array/maxitems';
+import './draft4/validators/array/minitems';
+import './draft4/validators/array/uniqueitems';
+import './draft4/validators/number/maximum';
+import './draft4/validators/number/minimum';
+import './draft4/validators/number/multipleof';
+import './draft4/validators/object/dependencies';
+import './draft4/validators/object/maxproperties';
+import './draft4/validators/object/minproperties';
+import './draft4/validators/object/properties';
+import './draft4/validators/object/required';
+import './draft4/validators/string/maxlength';
+import './draft4/validators/string/minlength';
+import './draft4/validators/string/pattern';
+import './draft4/validators/string/format';
 
-import './src/vendor/ipaddr';
-import './src/vendor/url';
+export {Schema, Loader} from './schema';
 
-import './src/validators/any/allof';
-import './src/validators/any/anyof';
-import './src/validators/any/oneof';
-import './src/validators/any/not';
-import './src/validators/any/enum';
-import './src/validators/any/type';
-import './src/validators/array/items';
-import './src/validators/array/maxitems';
-import './src/validators/array/minitems';
-import './src/validators/array/uniqueitems';
-import './src/validators/number/maximum';
-import './src/validators/number/minimum';
-import './src/validators/number/multipleof';
-import './src/validators/object/dependencies';
-import './src/validators/object/maxproperties';
-import './src/validators/object/minproperties';
-import './src/validators/object/properties';
-import './src/validators/object/required';
-import './src/validators/string/maxlength';
-import './src/validators/string/minlength';
-import './src/validators/string/pattern';
-import './src/validators/string/format';
-
-import './src/meta/schema';
-
-
-export {Schema, Loader} from './src/schema';
+registerMetaSchema(Draft4);

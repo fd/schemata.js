@@ -1,4 +1,4 @@
-import {isSchema} from '../../util';
+import {isSchema} from '../../../util';
 
 const ERR = 'any.not';
 

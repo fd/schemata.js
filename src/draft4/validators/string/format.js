@@ -1,6 +1,6 @@
-import {typeOf} from '../../util';
-import URL from '../../vendor/url';
-import ipaddr from '../../vendor/ipaddr';
+import {typeOf} from '../../../util';
+import URL from '../../../vendor/url';
+import ipaddr from '../../../vendor/ipaddr';
 
 const ERR = 'string.format';
 
