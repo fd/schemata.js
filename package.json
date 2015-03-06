@@ -1,0 +1,13 @@
+{
+  "main": "index",
+
+  "jspm": {
+    "directories": {
+      "lib": ".",
+      "packages": "jspm_packages"
+    },
+    "dependencies": {
+      "json": "^0.1.0"
+    }
+  }
+}
