@@ -5,8 +5,8 @@ build:
     - script:
         name: jspm install
         code: |
-          jspm install
+          node_modules/.bin/jspm install
     - script:
         name: karma
         code: |
-          karma start
+          node_modules/karma/bin/karma start

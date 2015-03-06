@@ -30,7 +30,8 @@ module.exports = function(config) {
 
   config.set({
     sauceLabs: {
-        testName: 'Schemata.js'
+      testName: 'Schemata.js',
+      build:    process.env.WERCKER_BUILD_ID
     },
     customLaunchers: customLaunchers,
     browsers: Object.keys(customLaunchers),
