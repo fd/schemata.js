@@ -1,7 +1,6 @@
 import {typeOf, isSchema, normalizeId} from './util';
-import {build} from './builder';
+import {build, isMetaSchema, getMetaSchema, determineMetaSchema} from './builder';
 import {Schema, $id} from './schema';
-import * as Draft4 from './draft4/schema';
 
 export class Loader {
 
@@ -37,8 +36,8 @@ export class Loader {
     let p = this.registry[id];
     if (p) { return Promise.resolve(p); }
 
-    if (id === Draft4.schema.id) {
-      p = Promise.resolve(Draft4.schema);
+    if (isMetaSchema(id)) {
+      p = Promise.resolve(getMetaSchema(id).schema);
     } else {
       p = this.fetch(src);
     }
@@ -70,10 +69,12 @@ export class Loader {
   build(schema, id) {
     let p = Promise.resolve(null);
 
-    if (schema.id !== Draft4.schema.id) {
+    if (!isMetaSchema(schema.id)) {
+      var metaSchema = determineMetaSchema(schema);
+
       // validate definition
       p = p
-        .then(() => this.import(Draft4.schema.id))
+        .then(() => this.import(metaSchema))
         .then((s) => {
           let info = s.validate(schema);
           if (!info.valid) {
@@ -87,12 +88,14 @@ export class Loader {
 
     p = p.then(() => build({ schema, id }));
 
-    if (schema.id === Draft4.schema.id) {
+    if (isMetaSchema(schema.id)) {
       // validate definition
+      var metaSchema = determineMetaSchema(schema);
+
       p = p.then((s) => {
-        let info = s.validate(Draft4.schema);
+        let info = s.validate(getMetaSchema(metaSchema).schema);
         if (!info.valid) {
-          let err = Error("Invalid schema: "+Draft4.schema.id);
+          let err = Error("Invalid schema: "+metaSchema);
           err.info = info;
           throw err;
         }

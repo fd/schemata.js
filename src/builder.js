@@ -21,10 +21,27 @@ export function registerMetaSchema(m) {
   metaSchemas[m.schema.id] = m;
 }
 
+export function isMetaSchema(id) {
+  return !!metaSchemas[id];
+}
+
+export function getMetaSchema(id) {
+  return metaSchemas[id];
+}
+
+export function determineMetaSchema(schema) {
+  if (schema.$schema) {
+    return schema.$schema;
+  }
+
+  return 'http://json-schema.org/draft-04/schema#';
+}
+
 export function build({ schema, id }) {
   var builder = new Builder();
 
-  builder.meta = (metaSchemas[schema.$schema] || metaSchemas['http://json-schema.org/draft-04/schema#']);
+  let metaSchema = determineMetaSchema(schema);
+  builder.meta = getMetaSchema(metaSchema);
 
   builder.build(schema, (id || schema.id || '#'), true);
   return builder.bind().then(() => builder.root);
