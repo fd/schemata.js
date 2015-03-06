@@ -37,6 +37,9 @@ module.exports = function(config) {
     browsers: Object.keys(customLaunchers),
     reporters: ['dots', 'saucelabs'],
     singleRun: true,
+    browserDisconnectTimeout: 30000,
+    browserNoActivityTimeout: 4 * 600000,
+    browserDisconnectTolerance: 1,
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
