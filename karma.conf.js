@@ -33,21 +33,49 @@ module.exports = function(config) {
       browserName: 'chrome',
       version: '40'
     },
-    sl_firefox: {
+    sl_firefox30: {
       base: 'SauceLabs',
       browserName: 'firefox',
       version: '30'
     },
-    sl_ios_safari: {
+    sl_firefox31: {
       base: 'SauceLabs',
-      browserName: 'iphone',
-      platform: 'OS X 10.9',
-      version: '7.1'
+      browserName: 'firefox',
+      version: '31'
     },
-    sl_ie_11: {
+    sl_firefox32: {
+      base: 'SauceLabs',
+      browserName: 'firefox',
+      version: '32'
+    },
+    sl_firefox33: {
+      base: 'SauceLabs',
+      browserName: 'firefox',
+      version: '33'
+    },
+    sl_firefox34: {
+      base: 'SauceLabs',
+      browserName: 'firefox',
+      version: '34'
+    },
+    sl_firefox35: {
+      base: 'SauceLabs',
+      browserName: 'firefox',
+      version: '35'
+    },
+    sl_ie9: {
       base: 'SauceLabs',
       browserName: 'internet explorer',
-      platform: 'Windows 8.1',
+      version: '9'
+    },
+    sl_ie10: {
+      base: 'SauceLabs',
+      browserName: 'internet explorer',
+      version: '10'
+    },
+    sl_ie11: {
+      base: 'SauceLabs',
+      browserName: 'internet explorer',
       version: '11'
     }
   };
@@ -64,7 +92,7 @@ module.exports = function(config) {
     browserDisconnectTimeout: 30000,
     browserNoActivityTimeout: 4 * 600000,
     captureTimeout: 4 * 600000,
-    browserDisconnectTolerance: 1,
+    browserDisconnectTolerance: 2,
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
