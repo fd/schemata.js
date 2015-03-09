@@ -1,5 +1,10 @@
 {
   "name": "schemata.js",
+
+  "scripts": {
+    "test": "node_modules/karma/bin/karma start"
+  },
+
   "jspm": {
     "main": "index",
     "format": "es6",
