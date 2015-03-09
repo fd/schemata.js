@@ -4,7 +4,7 @@
 
 
 ```js
-import {Schema} from 'shemata.js';
+import {Schema} from 'schemata.js';
 
 Schema.import('http://json-schema.org/card')
   .then(schema => {
