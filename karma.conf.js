@@ -82,7 +82,8 @@ module.exports = function(config) {
 
   config.set({
     sauceLabs: {
-      testName: 'Schemata.js',
+      testName:          'Schemata.js',
+      startConnect:      false,
       recordVideo:       false,
       recordScreenshots: false,
       captureHtml:       false,
