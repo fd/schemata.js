@@ -2,7 +2,7 @@
   "name": "schemata.js",
 
   "scripts": {
-    "test": "node_modules/karma/bin/karma start"
+    "test": "make test"
   },
 
   "jspm": {
