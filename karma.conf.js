@@ -83,7 +83,12 @@ module.exports = function(config) {
   config.set({
     sauceLabs: {
       testName: 'Schemata.js',
-      build:    process.env.WERCKER_BUILD_ID
+      build:    process.env.WERCKER_BUILD_ID,
+      recordVideo:       false,
+      recordScreenshots: false,
+      captureHtml:       false,
+      commandTimeout:    600,
+      idleTimeout:       1000
     },
     customLaunchers: customLaunchers,
     browsers: Object.keys(customLaunchers),
