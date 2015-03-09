@@ -2,7 +2,7 @@
   "name": "schemata.js",
 
   "scripts": {
-    "test": "make test"
+    "test": "node test.js"
   },
 
   "jspm": {
