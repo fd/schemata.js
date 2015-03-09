@@ -1,4 +1,4 @@
-modules.exports = [
+module.exports = [
   {
     sl_chrome35: {
       base: 'SauceLabs',
