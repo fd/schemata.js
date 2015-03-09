@@ -1,10 +1,8 @@
 {
   "name": "schemata.js",
-
   "scripts": {
     "test": "node test.js"
   },
-
   "jspm": {
     "main": "index",
     "format": "es6",

@@ -3,10 +3,6 @@ language: node_js
 node_js:
 - '0.11'
 
-before_script:
-- npm install
-- node_modules/.bin/jspm install
-
 addons:
   sauce_connect:
     username:   "schematajs"
