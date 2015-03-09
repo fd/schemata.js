@@ -21,8 +21,8 @@ module.exports = function(config) {
     reporters: ['dots', 'saucelabs'],
     singleRun: true,
     browserDisconnectTimeout: 30000,
-    browserNoActivityTimeout: 4 * 600000,
-    captureTimeout: 4 * 600000,
+    browserNoActivityTimeout: 2 * 600000,
+    captureTimeout: 2 * 600000,
     browserDisconnectTolerance: 2,
     transports: ['xhr-polling'],
 
@@ -37,8 +37,8 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'jspm_packages/github/inexorabletash/polyfill@0.1.1/es5.js',
-      'jspm_packages/github/inexorabletash/polyfill@0.1.1/es6.js',
+      'jspm_packages/github/inexorabletash/polyfill@0.1.1/url.js',
+      'jspm_packages/github/inexorabletash/polyfill@0.1.1/typedarray.js',
       'jspm_packages/system.js',
       'config.js',
       'test/runner.js',
