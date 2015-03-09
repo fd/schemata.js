@@ -20,7 +20,7 @@ function runBatches(n, i) {
   if (i >= n) return;
 
   runBatch(i+1, function(err, code) {
-    assertOK(err, code);
+    assertOK(err, 0);
     runBatches(n, i+1);
   });
 }

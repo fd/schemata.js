@@ -12,9 +12,6 @@ module.exports = function(config) {
       build:             'TRAVIS #' + process.env.TRAVIS_BUILD_NUMBER + ' (' + process.env.TRAVIS_BUILD_ID + ')',
       testName:          'Schemata.js',
       startConnect:      false,
-      // recordVideo:       false,
-      // recordScreenshots: false,
-      // captureHtml:       false,
       commandTimeout:    600,
       idleTimeout:       1000,
       tunnelIdentifier:  process.env.TRAVIS_JOB_NUMBER
