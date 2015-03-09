@@ -9,13 +9,15 @@ module.exports = function(config) {
 
   config.set({
     sauceLabs: {
+      build:             'TRAVIS #' + process.env.TRAVIS_BUILD_NUMBER + ' (' + process.env.TRAVIS_BUILD_ID + ')',
       testName:          'Schemata.js',
       startConnect:      false,
       // recordVideo:       false,
       // recordScreenshots: false,
       // captureHtml:       false,
       commandTimeout:    600,
-      idleTimeout:       1000
+      idleTimeout:       1000,
+      tunnelIdentifier:  process.env.TRAVIS_JOB_NUMBER
     },
     customLaunchers: customLaunchers,
     browsers: Object.keys(customLaunchers),
@@ -25,6 +27,7 @@ module.exports = function(config) {
     browserNoActivityTimeout: 4 * 600000,
     captureTimeout: 4 * 600000,
     browserDisconnectTolerance: 2,
+    transports: ['xhr-polling'],
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
