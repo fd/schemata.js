@@ -1,0 +1,13 @@
+language: node_js
+
+node_js:
+- '0.11'
+
+before_script:
+- npm install
+
+addons:
+  sauce_connect:
+    username:   "schematajs"
+    access_key:
+      secure: "ZJjXmd/6+O1z0pEkP7NjD9FCNZWpyECUhGF3E+au5KhTS/VGqTyyFsG+h/CGwVdqvQi+7bNijaGiKXkME9t3DnWUqvGtFijmedZd6fnDtpZnD6ljgzKO+epe0pMutaVHCPGbKHaIDhxDkKx+p1mu+Ktgz9c+GVxoHDf3rx0wJwE="
