@@ -11,9 +11,9 @@ module.exports = function(config) {
     sauceLabs: {
       testName:          'Schemata.js',
       startConnect:      false,
-      recordVideo:       false,
-      recordScreenshots: false,
-      captureHtml:       false,
+      // recordVideo:       false,
+      // recordScreenshots: false,
+      // captureHtml:       false,
       commandTimeout:    600,
       idleTimeout:       1000
     },
