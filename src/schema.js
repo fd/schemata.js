@@ -43,6 +43,10 @@ export class Schema {
     this[$id] = id;
   }
 
+  get resolvedSchema() {
+    return this[$schema] || this;
+  }
+
   get(id) {
     id = normalizeId(id);
     id = resolveReference(this[$id], id);
