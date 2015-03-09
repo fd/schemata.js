@@ -1,5 +1,8 @@
-import URL from './vendor/url';
 import {Schema} from './schema';
+
+if (!window.URL) {
+  throw Error("please include a URL polyfill");
+}
 
 export function typeOf(v) {
   if (v === undefined) return 'null';

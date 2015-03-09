@@ -1,7 +1,10 @@
 import {typeOf, isSchema, normalizeId} from './util';
 import {build, isMetaSchema, getMetaSchema, determineMetaSchema} from './builder';
 import {Schema, $id} from './schema';
-import './vendor/fetch';
+
+if (!window.fetch) {
+  throw Error("please include a fetch() polyfill");
+}
 
 export class Loader {
 

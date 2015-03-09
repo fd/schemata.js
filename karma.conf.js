@@ -37,6 +37,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+      'jspm_packages/github/inexorabletash/polyfill@0.1.1/experimental/fetch.js',
       'jspm_packages/github/inexorabletash/polyfill@0.1.1/url.js',
       'jspm_packages/github/inexorabletash/polyfill@0.1.1/typedarray.js',
       'jspm_packages/system.js',

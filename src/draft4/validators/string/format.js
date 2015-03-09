@@ -1,6 +1,9 @@
 import {typeOf} from '../../../util';
-import URL from '../../../vendor/url';
 import ipaddr from '../../../vendor/ipaddr';
+
+if (!window.URL) {
+  throw Error("please include a URL polyfill");
+}
 
 const ERR = 'string.format';
 
