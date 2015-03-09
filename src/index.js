@@ -5,7 +5,6 @@ import './schema';
 import './util';
 
 import './vendor/ipaddr';
-import './vendor/url';
 
 import * as Draft4 from './draft4/schema';
 import './draft4/validators/any/allof';
