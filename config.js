@@ -8,7 +8,8 @@ System.config({
 
 System.config({
   "map": {
-    "json": "github:systemjs/plugin-json@0.1.0"
+    "json": "github:systemjs/plugin-json@0.1.0",
+    "polyfill": "github:inexorabletash/polyfill@0.1.1"
   }
 });
 
