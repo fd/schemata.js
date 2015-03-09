@@ -8,23 +8,7 @@ module.exports = function(config) {
   var customLaunchers = batch;
 
   config.set({
-    sauceLabs: {
-      build:             'TRAVIS #' + process.env.TRAVIS_BUILD_NUMBER + ' (' + process.env.TRAVIS_BUILD_ID + ')',
-      testName:          'Schemata.js',
-      startConnect:      false,
-      commandTimeout:    90,
-      idleTimeout:       90,
-      tunnelIdentifier:  process.env.TRAVIS_JOB_NUMBER
-    },
-    customLaunchers: customLaunchers,
-    browsers: Object.keys(customLaunchers),
-    reporters: ['dots', 'saucelabs'],
-    singleRun: true,
-    browserDisconnectTimeout: 30000,
-    browserNoActivityTimeout: 2 * 600000,
-    captureTimeout: 2 * 600000,
-    browserDisconnectTolerance: 2,
-    transports: ['xhr-polling'],
+
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
@@ -71,5 +55,50 @@ module.exports = function(config) {
     // level of logging
     // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
     logLevel: config.LOG_INFO,
+
+    browsers: ['Chrome', 'Firefox', 'Safari', 'PhantomJS']
   });
+
+  if (!process.env.TRAVIS_BUILD_NUMBER) {
+    config.set({
+      sauceLabs: {
+        build:             'dev',
+        testName:          'Schemata.js',
+        startConnect:      true,
+        commandTimeout:    90,
+        idleTimeout:       90
+      },
+      autoWatch: false,
+      customLaunchers: customLaunchers,
+      browsers: Object.keys(customLaunchers),
+      reporters: ['dots', 'saucelabs'],
+      singleRun: true,
+      browserDisconnectTimeout: 30000,
+      browserNoActivityTimeout: 2 * 600000,
+      captureTimeout: 2 * 600000,
+      browserDisconnectTolerance: 2,
+      transports: ['xhr-polling']
+    });
+  } else {
+    config.set({
+      sauceLabs: {
+        build:             'TRAVIS #' + process.env.TRAVIS_BUILD_NUMBER + ' (' + process.env.TRAVIS_BUILD_ID + ')',
+        testName:          'Schemata.js',
+        startConnect:      false,
+        commandTimeout:    90,
+        idleTimeout:       90,
+        tunnelIdentifier:  process.env.TRAVIS_JOB_NUMBER
+      },
+      autoWatch: false,
+      customLaunchers: customLaunchers,
+      browsers: Object.keys(customLaunchers),
+      reporters: ['dots', 'saucelabs'],
+      singleRun: true,
+      browserDisconnectTimeout: 30000,
+      browserNoActivityTimeout: 2 * 600000,
+      captureTimeout: 2 * 600000,
+      browserDisconnectTolerance: 2,
+      transports: ['xhr-polling']
+    });
+  }
 };

@@ -35,6 +35,7 @@ export class FormatValidator {
 var re_email = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 var re_hostname = /^(?=.{1,255}$)[0-9A-Za-z](?:(?:[0-9A-Za-z]|\b-){0,61}[0-9A-Za-z])?(?:\.[0-9A-Za-z](?:(?:[0-9A-Za-z]|\b-){0,61}[0-9A-Za-z])?)*\.?$/
 var re_datetime = /^(\d\d\d\d)(-)?(\d\d)(-)?(\d\d)(T)?(\d\d)(:)?(\d\d)?(:)?(\d\d)?([\.,]\d+)?($|Z|([+-])(\d\d)(:)?(\d\d)?)$/i;
+var re_url_scheme = /^[a-z][a-z0-9+.-]*:\/\//;
 
 FormatValidator.formats = {
 
@@ -59,12 +60,15 @@ FormatValidator.formats = {
   },
 
   uri(s) {
-    var ok = true;
-    // try url
-    try { new URL(s); } catch (e) {
-      ok = false;
+    if (!re_url_scheme.test(s)) {
+      return false;
     }
-    return ok;
+
+    try { new URL(s); } catch (e) {
+      return false;
+    }
+
+    return true;
   },
 
   email(s) {
