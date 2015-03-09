@@ -12,16 +12,25 @@ function jspmInstall(clb) {
   handleChildProcess(ps, clb);
 }
 
-function runBatches(n, i) {
+function runBatches(n, i, failed) {
   if (i === undefined) {
     i = 0;
   }
 
-  if (i >= n) return;
+  if (failed === undefined) {
+    failed = false;
+  }
+
+  if (i >= n) {
+    if (failed) {
+      process.exit(1);
+    }
+    return;
+  }
 
   runBatch(i+1, function(err, code) {
     assertOK(err, 0);
-    runBatches(n, i+1);
+    runBatches(n, i+1, failed || (code !== 0));
   });
 }
 
